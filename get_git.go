@@ -115,11 +115,11 @@ func (g *GitGetter) Get(dst string, u *url.URL) error {
 	if err != nil && !os.IsNotExist(err) {
 		return err
 	}
-	if err == nil {
-		err = g.update(ctx, dst, sshKeyFile, ref, depth)
-	} else {
-		err = g.clone(ctx, dst, sshKeyFile, u, depth)
-	}
+	//if err == nil {
+	//	err = g.update(ctx, dst, sshKeyFile, ref, depth)
+	//} else {
+	err = g.clone(ctx, dst, sshKeyFile, u, depth)
+	//}
 	if err != nil {
 		return err
 	}
